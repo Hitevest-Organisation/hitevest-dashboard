@@ -24,9 +24,9 @@ export function SearhBar() {
         className="bg-transparent w-full p-2 text-dark-100 md:py-4 focus:outline-none"
         placeholder="Search for something"
       />
-      <div className="bg-primary rounded-xl font-bold text-white py-2 px-8 hidden capitalize md:block">
+      <button className="bg-primary rounded-xl font-bold text-white py-2 px-8 hidden capitalize md:block">
         Search
-      </div>
+      </button>
     </div>
   );
 }

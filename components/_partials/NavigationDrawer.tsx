@@ -10,12 +10,20 @@ export default function NavigationDrawer({ page }) {
           <div className="bg-primary rounded-xl font-bold text-white py-2 px-8 capitalize">
             Dashboard
           </div>
-          <div className="rounded-xl font-bold py-2 px-8 text-gray-300 capitalize hover:(text-primary bg-secondary) ">
-            Investment
-          </div>
-          <div className="rounded-xl font-bold py-2 px-8 text-gray-300 capitalize hover:(text-primary bg-secondary) ">
-            Desposit
-          </div>
+          {[
+            "Investment",
+            "Deposits",
+            "Withdrawals",
+            "Transactions",
+            "Referals",
+          ].map((link, i) => (
+            <div
+              key={i}
+              className="rounded-xl font-bold py-2 px-8 text-gray-300 capitalize hover:(text-primary bg-secondary) "
+            >
+              {link}
+            </div>
+          ))}
         </div>
       </div>
 
