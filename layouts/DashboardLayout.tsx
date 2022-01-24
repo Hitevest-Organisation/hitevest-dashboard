@@ -2,7 +2,7 @@ import Head from "next/head";
 import NavigationDrawer from "../components/_partials/NavigationDrawer";
 import TopNavigationBar from "../components/_partials/TopNavigationBar";
 
-export default function DashboardLayout({ children, alias }) {
+export default function DashboardLayout({ children, alias }: Props) {
   return (
     <div className="max-w-screen overflow-hidden">
       <Head>
@@ -23,4 +23,9 @@ export default function DashboardLayout({ children, alias }) {
       </section>
     </div>
   );
+}
+
+interface Props {
+  children: any;
+  alias: string;
 }

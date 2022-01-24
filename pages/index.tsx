@@ -1,7 +1,6 @@
-import Head from "next/head";
 import DashboardLayout from "../layouts/DashboardLayout";
 
-export default function Home() {
+export default function DashboardHome() {
   return (
     <DashboardLayout alias="dashboard">
       <section className="flex max-w-screen space-x-4 p-2 overflow-x-auto md:(p-4 px-8) ">

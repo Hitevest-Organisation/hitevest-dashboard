@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function NavigationDrawer({ page }) {
+export default function NavigationDrawer({ page }: Props) {
   return (
     <aside className="min-h-full p-4 w-64 hidden lg:block">
       <div>
@@ -52,4 +52,8 @@ export default function NavigationDrawer({ page }) {
       </div>
     </aside>
   );
+}
+
+interface Props {
+  page: string;
 }
