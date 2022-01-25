@@ -1,61 +1,86 @@
-import DashboardLayout from "../layouts/DashboardLayout";
-
-export default function DashboardHome() {
+export default function DashboardLogin() {
   return (
-    <DashboardLayout alias="dashboard">
-      <section className="flex max-w-screen space-x-4 p-2 overflow-x-auto md:(p-4 px-8) ">
-        {[
-          "Deposit Wallet",
-          "Local Wallet",
-          "Total Investment",
-          "Total Deposit",
-          "Total Witdrawal",
-          "Referal Earnings",
-        ].map((item, i) => (
-          <div
-            className="bg-white rounded-lg flex-grow min-w-48 transform duration-300 hover:scale-105"
-            key={i}
-          >
-            <div className="font-bold p-4 pb-0 text-gray-700">{item}</div>
-            <div className="flex space-x-4 p-4 pt-1 pb-2 items-center">
-              <div className="flex-grow font-medium font-bold text-xl text-[#f2a218]">
-                $ 600k
+    <div className="bg-black h-screen bg-opacity-40 w-full md:(flex justify-center h-screen items-center p-8) ">
+      <div className="container bg-white flex h-full mx-auto max-w-screen-xl shadow-xl md:(rounded-3xl h-auto overflow-hidden) ">
+        <div
+          className="bg-cover bg-no-repeat min-h-full w-1/3 hidden md:(block)"
+          style={{
+            backgroundImage: "url(/images/auth-bg.png)",
+          }}
+        />
+
+        <div className="flex-grow p-4 text-dark-900">
+          <div className="flex justify-end">
+            <a className="rounded-full flex font-bold h-12 text-2xl w-12 justify-center items-center hover:(bg-secondary text-primary) ">
+              ✕
+            </a>
+          </div>
+
+          <div className="font-bold text-center text-xl capitalize md:(text-2xl) lg:(text-3xl)">
+            Login to your account
+          </div>
+
+          <div className="mx-auto max-w-screen-md p-8 ">
+            <div className="py-4">
+              <div>
+                <div className="font-medium pb-1">Email address</div>
+                <div>
+                  <input
+                    className="bg-white bg-secondary border border-primary rounded-lg w-full p-2 focus:outline-none"
+                    placeholder="Example@email.com"
+                  />
+                </div>
               </div>
-              <div className="rounded flex font-medium space-x-2 bg-[#219653] bg-opacity-40 text-xs py-0.5 px-1 text-[#219653] items-center">
-                <img src="/icons/up.svg" alt="search" className="h-3 w-3" />
-                <div>2.5%</div>
+              <div className="text-xs text-red-700 italic">
+                Enter your email
               </div>
             </div>
 
-            <div
-              className="bg-no-repeat bg-cover bg-top h-20 md:h-24"
-              style={{
-                backgroundImage: "url(/images/dashboard/graphs/001.svg)",
-              }}
-            />
-          </div>
-        ))}
-      </section>
+            <div className="py-4">
+              <div className="font-medium pb-1"> Password</div>
+              <div>
+                <input
+                  className="bg-white bg-secondary border border-primary rounded-lg w-full p-2 focus:outline-none"
+                  placeholder="Example@email.com"
+                />
+              </div>
+              <div className="text-xs text-red-700 italic">
+                Enter your password
+              </div>
+            </div>
 
-      <section className="p-4 md:p-8">
-        <section className="bg-white rounded-2xl p-4">
-          <div className="flex space-x-4">
-            <button className="bg-primary rounded-xl font-bold bg-opacity-20 text-primary text-sm text-center p-2 px-4 capitalize md:px-8 hover:(bg-opacity-100 bg-secondary text-white) ">
-              Deposit
-            </button>
+            <div className="pb-2">
+              <div className="">
+                Forget password?{" "}
+                <a
+                  href="/auth"
+                  className="font-bold text-bold text-primary hover:(underline)"
+                >
+                  Reset now
+                </a>
+              </div>
+            </div>
 
-            {["Witdrawal", "Interest"].map((item, i) => (
-              <button
-                key={i}
-                className="rounded-xl font-bold text-sm py-2 px-4 text-gray-400 capitalize md:px-8 hover:(text-primary bg-secondary) "
-              >
-                {item}
+            <div className="text-center pt-8 pb-4">
+              <button className="bg-primary rounded-lg mx-auto min-w-sm text-white p-2">
+                Login
               </button>
-            ))}
+            </div>
+
+            <div className="py-4">
+              <div className="text-center">
+                Don’t have an account?{" "}
+                <a
+                  href="/auth"
+                  className="font-bold text-bold text-primary hover:(underline)"
+                >
+                  Register
+                </a>
+              </div>
+            </div>
           </div>
-          <div className="py-8">fghfjhgjhk</div>
-        </section>
-      </section>
-    </DashboardLayout>
+        </div>
+      </div>
+    </div>
   );
 }
