@@ -1,47 +1,74 @@
 import Link from "next/link";
 
-export default function NavigationDrawer({ page }: Props) {
-  const navLinks = [
-    {
-      title: "Dashboard",
-      alias: "dashboard",
-      slug: "/dashboard",
-      icon: "/icons/dashboard.svg",
-    },
-    {
-      title: "Investment",
-      alias: "investment",
-      slug: "/dashboard/investment",
-      icon: "/icons/investment.svg",
-    },
-    {
-      title: "Deposits",
-      alias: "deposits",
-      slug: "/dashboard/deposits",
-      icon: "/icons/deposits.svg",
-    },
-    {
-      title: "Withdrawals",
-      alias: "withdrawals",
-      slug: "/dashboard/withdrawals",
-      icon: "/icons/withdrawals.svg",
-    },
-    {
-      title: "Transactions",
-      alias: "transactions",
-      icon: "/icons/withdrawals.svg",
-      slug: "/dashboard/transactions",
-    },
-    {
-      title: "Referals",
-      alias: "referals",
-      icon: "/icons/referals.svg",
-      slug: "/dashboard/referals",
-    },
-  ];
+const navLinks = [
+  {
+    title: "Dashboard",
+    alias: "dashboard",
+    slug: "/dashboard",
+    icon: "/icons/dashboard.svg",
+  },
+  {
+    title: "Investment",
+    alias: "investment",
+    slug: "/dashboard/investment",
+    icon: "/icons/investment.svg",
+  },
+  {
+    title: "Deposits",
+    alias: "deposits",
+    slug: "/dashboard/deposits",
+    icon: "/icons/deposits.svg",
+  },
+  {
+    title: "Withdrawals",
+    alias: "withdrawals",
+    slug: "/dashboard/withdrawals",
+    icon: "/icons/withdrawals.svg",
+  },
+  {
+    title: "Transactions",
+    alias: "transactions",
+    icon: "/icons/withdrawals.svg",
+    slug: "/dashboard/transactions",
+  },
+  {
+    title: "Referals",
+    alias: "referals",
+    icon: "/icons/referals.svg",
+    slug: "/dashboard/referals",
+  },
+];
 
+export default function NavigationDrawer({ page }: Props) {
   return (
-    <aside className="min-h-full p-4 w-64 hidden lg:block">
+    <>
+      <DesktopNavigation page={page} />
+      <MobileNavigation page={page} />
+    </>
+  );
+}
+
+export function MobileNavigation({ page }: Props) {
+  return (
+    <nav className="flex space-x-2 w-full p-4 lg:(hidden)">
+      {navLinks.map((link, i) => (
+        <Link key={link.alias} href={`/${link.slug}`}>
+          <a
+            className={`rounded-xl font-bold p-2 text-xs capitalize hover:(text-primary bg-secondary) ${
+              page == link.alias ? "bg-primary text-white" : "text-gray-400 "
+            }`}
+          >
+            {link.title}
+          </a>
+        </Link>
+      ))}
+    </nav>
+  );
+}
+
+export function DesktopNavigation({ page }: Props) {
+  return (
+    <section className="min-h-full p-4 w-64 hidden lg:block">
       <div>
         <img src="/images/logo.svg" alt="logo" />
       </div>
@@ -84,7 +111,7 @@ export default function NavigationDrawer({ page }: Props) {
           Logout
         </button>
       </div>
-    </aside>
+    </section>
   );
 }
 
