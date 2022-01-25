@@ -1,17 +1,19 @@
 import DashboardLayout from "../../layouts/DashboardLayout";
 
 export default function DashboardHome() {
+  const cards = [
+    "Deposit Wallet",
+    "Local Wallet",
+    "Total Investment",
+    "Total Deposit",
+    "Total Witdrawal",
+    "Referal Earnings",
+  ];
+
   return (
     <DashboardLayout alias="dashboard">
       <section className="flex max-w-screen space-x-4 p-2 overflow-x-auto md:(p-4 px-8) ">
-        {[
-          "Deposit Wallet",
-          "Local Wallet",
-          "Total Investment",
-          "Total Deposit",
-          "Total Witdrawal",
-          "Referal Earnings",
-        ].map((item, i) => (
+        {cards.map((item, i) => (
           <div
             className="bg-white rounded-lg flex-grow min-w-48 transform duration-300 hover:scale-105"
             key={i}
@@ -53,6 +55,7 @@ export default function DashboardHome() {
               </button>
             ))}
           </div>
+
           <div className="py-8">fghfjhgjhk</div>
         </section>
       </section>

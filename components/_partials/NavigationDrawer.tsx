@@ -107,9 +107,11 @@ export function DesktopNavigation({ page }: Props) {
           Copy Referal link
         </button>
 
-        <button className="rounded-xl font-bold py-2 px-8 text-gray-400 capitalize hover:(text-primary bg-secondary) ">
-          Logout
-        </button>
+        <Link href="/">
+          <a className="rounded-xl font-bold text-center w-full py-2 px-8 text-gray-400 capitalize hover:(text-primary bg-secondary) ">
+            Logout
+          </a>
+        </Link>
       </div>
     </section>
   );
