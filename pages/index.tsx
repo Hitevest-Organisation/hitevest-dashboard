@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function DashboardLogin() {
   return (
     <div className="bg-black h-screen bg-opacity-40 w-full md:(flex justify-center h-screen items-center p-8) ">
@@ -20,7 +22,7 @@ export default function DashboardLogin() {
             Login to your account
           </div>
 
-          <div className="mx-auto max-w-screen-md p-8 ">
+          <section className="mx-auto max-w-screen-md p-8 ">
             <div className="py-4">
               <div>
                 <div className="font-medium pb-1">Email address</div>
@@ -52,33 +54,39 @@ export default function DashboardLogin() {
             <div className="pb-2">
               <div className="">
                 Forget password?{" "}
-                <a
-                  href="/auth"
-                  className="font-bold text-bold text-primary hover:(underline)"
-                >
-                  Reset now
-                </a>
+                <Link href="/reset-password">
+                  <a
+                    href="/auth"
+                    className="font-bold text-bold text-primary hover:(underline)"
+                  >
+                    Reset now
+                  </a>
+                </Link>
               </div>
             </div>
 
             <div className="text-center pt-8 pb-4">
-              <button className="bg-primary rounded-lg mx-auto min-w-sm text-white p-2">
-                Login
-              </button>
+              <Link href="/dashboard">
+                <a className="bg-primary rounded-lg mx-auto max-w-sm text-white p-2 block">
+                  Login
+                </a>
+              </Link>
             </div>
 
             <div className="py-4">
               <div className="text-center">
                 Don’t have an account?{" "}
-                <a
-                  href="/auth"
-                  className="font-bold text-bold text-primary hover:(underline)"
-                >
-                  Register
-                </a>
+                <Link href="/register">
+                  <a
+                    href="/auth"
+                    className="font-bold text-bold text-primary hover:(underline)"
+                  >
+                    Register
+                  </a>
+                </Link>
               </div>
             </div>
-          </div>
+          </section>
         </div>
       </div>
     </div>
