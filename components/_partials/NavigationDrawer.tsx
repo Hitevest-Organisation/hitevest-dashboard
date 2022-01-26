@@ -50,17 +50,16 @@ export default function NavigationDrawer({ page }: Props) {
 
 export function MobileNavigation({ page }: Props) {
   return (
-    <nav className="flex space-x-2 w-full p-4 justify-between lg:(hidden)">
+    <nav className="flex space-x-2 w-full p-2 justify-between lg:(hidden)">
       {navLinks.map((link, i) => (
         <Link key={link.alias} href={`${link.slug}`}>
           <a
             className={`rounded-xl font-bold p-2 text-xs capitalize hover:(text-primary bg-secondary) ${
-              page == link.alias
-                ? "bg-primary text-white"
-                : "text-true-gray-400 "
+              page == link.alias ? "text-primary" : "text-true-gray-400 "
             }`}
           >
-            {link.title}
+            <img alt="" src={link.icon} className="mx-auto h-6 w-6" />
+            <div className="pt-2">{link.title}</div>
           </a>
         </Link>
       ))}
@@ -83,13 +82,14 @@ export function DesktopNavigation({ page }: Props) {
           {navLinks.map((link, i) => (
             <Link key={link.alias} href={`/${link.slug}`}>
               <a
-                className={`rounded-2xl text-sm font-medium py-2 px-8 capitalize hover:(text-primary bg-secondary) ${
+                className={`flex space-x-2 items-center  rounded-2xl text-sm font-medium py-2 px-8 capitalize hover:(text-primary bg-secondary) ${
                   page == link.alias
                     ? "bg-primary text-white"
                     : "text-true-gray-400 "
                 }`}
               >
-                {link.title}
+                <img alt="" src={link.icon} className="h-6 w-6" />
+                <div>{link.title}</div>
               </a>
             </Link>
           ))}
@@ -113,8 +113,9 @@ export function DesktopNavigation({ page }: Props) {
         </button>
 
         <Link href="/">
-          <a className="rounded-xl font-bold text-center w-full py-2 px-8 text-true-gray-400 capitalize hover:(text-primary bg-secondary) ">
-            Logout
+          <a className="rounded-xl flex font-bold space-x-2 text-center w-full py-2 px-8 text-true-gray-400 justify-center items-center capitalize hover:(text-primary bg-secondary) ">
+            <img alt="" src="/icons/logout.svg" className="h-4 w-4" />
+            <div>Logout</div>
           </a>
         </Link>
       </section>
