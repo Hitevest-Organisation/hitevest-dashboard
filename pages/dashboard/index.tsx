@@ -1,5 +1,5 @@
 import DashboardLayout from "../../layouts/DashboardLayout";
-import { transactions } from "../../assets/DummyTransactions";
+import TransactionsTable from "../../components/dashboard/TransactionsTable";
 
 export default function DashboardHome() {
   const cards = [
@@ -40,8 +40,8 @@ export default function DashboardHome() {
         ))}
       </section>
 
-      <section className="p-4 md:p-8 lg:p-20">
-        <section className="bg-white rounded-3xl p-4">
+      <section className="p-4 md:p-8">
+        <section className="bg-white rounded-3xl p-4 md:(p-8)">
           <div className="flex space-x-4">
             <button className="bg-primary rounded-xl font-bold bg-opacity-20 text-primary text-sm text-center p-2 px-4 capitalize md:px-8 hover:(bg-opacity-100 bg-secondary text-white) ">
               Deposit
@@ -57,56 +57,7 @@ export default function DashboardHome() {
             ))}
           </div>
 
-          <div className="py-4 overflow-x-auto">
-            <section className="rounded w-full table table-auto">
-              <div className="table-header-group">
-                <div className="font-medium text-sm text-true-gray-600 uppercase table-row">
-                  <div className="font-bold text-left p-2 py-4 table-cell">
-                    Date
-                  </div>
-                  <div className="font-bold text-left p-2 table-cell">
-                    <div className="inline md:hidden">Trans ID</div>
-                    <div className="hidden md:inline">Transaction ID</div>
-                  </div>
-                  <div className="font-bold text-left p-2 table-cell">
-                    Amount
-                  </div>
-                  <div className="font-bold text-left p-2 table-cell">
-                    Wallet Ballance
-                  </div>
-                  <div className="font-bold text-left p-2 table-cell">
-                    Remark
-                  </div>
-                </div>
-              </div>
-
-              {transactions.map((transaction, i) => (
-                <div key={i} className="text-true-gray-600 table-row-group">
-                  <div className="text-sm table-row">
-                    <div className="text-xs p-2 table-cell md:(py-4) ">
-                      {transaction.date}
-                    </div>
-                    <div className="p-2 table-cell">{transaction.id}</div>
-                    <div className="p-2 table-cell">
-                      $ {transaction.amount.toLocaleString()}
-                    </div>
-                    <div className="p-2 table-cell">
-                      $ {transaction.balance.toLocaleString()}
-                    </div>
-                    <div className="p-2 table-cell whitespace-nowrap">
-                      {transaction.remark}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </section>
-
-            <nav className="flex pt-4 justify-end">
-              <button className="bg-primary rounded-xl font-bold bg-opacity-20 text-primary text-sm text-center p-2 px-4 capitalize md:px-8 hover:(bg-opacity-100 bg-secondary text-white) ">
-                Veiw All →
-              </button>
-            </nav>
-          </div>
+          <TransactionsTable limit={10} />
         </section>
       </section>
     </DashboardLayout>
