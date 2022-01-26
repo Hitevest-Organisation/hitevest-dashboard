@@ -1,5 +1,6 @@
 import { useState } from "react";
 import TransactionsTable from "../../components/dashboard/TransactionsTable";
+import Pagetitle from "../../components/_partials/Pagetitle";
 import DashboardLayout from "../../layouts/DashboardLayout";
 
 export default function TransactionsPage() {
@@ -11,9 +12,8 @@ export default function TransactionsPage() {
       <section className="p-4 md:p-8">
         <section className="bg-white rounded-3xl p-4 md:(p-8)">
           <div className="flex space-x-4">
-            <h1 className="font-bold text-primary text-xl md:(text-2xl pr-4) ">
-              Transactions
-            </h1>
+            <Pagetitle>Transactions</Pagetitle>
+
             {transactionsBtn.map((btn, i) => (
               <button
                 key={i}
