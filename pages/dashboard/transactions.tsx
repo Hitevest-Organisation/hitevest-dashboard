@@ -1,7 +1,11 @@
+import { useState } from "react";
 import TransactionsTable from "../../components/dashboard/TransactionsTable";
 import DashboardLayout from "../../layouts/DashboardLayout";
 
 export default function TransactionsPage() {
+  const [currentTransactionsBtn, setCurrentTransactionsBtn] = useState(0);
+  const transactionsBtn = ["deposit", "interest"];
+
   return (
     <DashboardLayout alias="transactions">
       <section className="p-4 md:p-8">
@@ -10,13 +14,19 @@ export default function TransactionsPage() {
             <h1 className="font-bold text-primary text-xl md:(text-2xl pr-4) ">
               Transactions
             </h1>
-            <button className="bg-primary rounded-xl font-bold bg-opacity-20 text-primary text-sm text-center p-2 px-4 capitalize md:px-8 hover:(bg-opacity-100 bg-secondary text-white) ">
-              Deposit
-            </button>
-
-            <button className="rounded-xl font-bold text-sm py-2 px-4 text-true-gray-400 capitalize md:px-8 hover:(text-primary bg-secondary) ">
-              Interest
-            </button>
+            {transactionsBtn.map((btn, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrentTransactionsBtn(i)}
+                className={`rounded-xl font-bold text-sm py-2 px-4 capitalize md:px-8  ${
+                  i == currentTransactionsBtn
+                    ? "bg-primary bg-opacity-20 text-primary"
+                    : "hover:(text-primary bg-secondary) text-true-gray-400"
+                } `}
+              >
+                {btn}
+              </button>
+            ))}
           </div>
 
           <TransactionsTable />

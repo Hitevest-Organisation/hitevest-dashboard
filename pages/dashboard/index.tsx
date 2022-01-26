@@ -4,6 +4,9 @@ import { transactions } from "../../assets/DummyTransactions";
 import { useState } from "react";
 
 export default function DashboardHome() {
+  const [currentTransactionsBtn, setCurrentTransactionsBtn] = useState(0);
+  const transactionsBtn = ["deposit", "withdrawal", "interest"];
+
   const cards = [
     "Deposit Wallet",
     "Local Wallet",
@@ -12,9 +15,6 @@ export default function DashboardHome() {
     "Total Witdrawal",
     "Referal Earnings",
   ];
-
-  const transactionsBtn = ["deposit", "withdrawal", "interest"];
-  const [currentTransactionsBtn, setCurrentTransactionsBtn] = useState(0);
 
   return (
     <DashboardLayout alias="dashboard">

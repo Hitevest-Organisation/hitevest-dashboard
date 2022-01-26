@@ -50,7 +50,7 @@ export default function NavigationDrawer({ page }: Props) {
 
 export function MobileNavigation({ page }: Props) {
   return (
-    <nav className="flex space-x-2 w-full p-4 lg:(hidden)">
+    <nav className="flex space-x-2 w-full p-4 justify-between lg:(hidden)">
       {navLinks.map((link, i) => (
         <Link key={link.alias} href={`/${link.slug}`}>
           <a
