@@ -62,7 +62,7 @@ export default function ReferalsPage() {
 
   return (
     <DashboardLayout alias="referals">
-      <section className="p-4 md:p-8">
+      <section className="p-4 pt-0 md:(p-8 pt-0) ">
         <section className="bg-white rounded-3xl p-4 md:(p-8)">
           <Pagetitle>Referred Users</Pagetitle>
           <section className="py-4 overflow-x-auto">

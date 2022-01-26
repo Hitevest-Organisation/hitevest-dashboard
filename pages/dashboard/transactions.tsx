@@ -9,7 +9,7 @@ export default function TransactionsPage() {
 
   return (
     <DashboardLayout alias="transactions">
-      <section className="p-4 md:p-8">
+      <section className="p-4 pt-0 md:(p-8 pt-0) ">
         <section className="bg-white rounded-3xl p-4 md:(p-8)">
           <div className="flex space-x-4">
             <Pagetitle>Transactions</Pagetitle>
