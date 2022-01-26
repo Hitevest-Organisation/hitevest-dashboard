@@ -3,7 +3,8 @@ import Pagetitle from "../../components/_partials/Pagetitle";
 import DashboardLayout from "../../layouts/DashboardLayout";
 
 export default function WithdrawalsPage() {
-  const withdrawalTypes = ["Bitcoin", "Bank Account"];
+  const withdrawalTypes = ["Bitcoin Wallet", "Bank Account"];
+
   return (
     <DashboardLayout alias="withdrawals">
       <section className="px-4 md:(px-8 flex justify-evenly space-x-8) ">
