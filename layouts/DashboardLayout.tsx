@@ -11,9 +11,9 @@ export default function DashboardLayout({ children, alias }: Props) {
         <link rel="icon" href="/favicon.png" />
       </Head>
 
-      <section className="flex flex-col h-screen justify-between lg:(min-h-screen flex-row flex-row-reverse) lg:p-4 ">
-        <main className="max-w-screen p-4 lg:(min-h-full w-9/12) xl:w-10/12 ">
-          <div className="bg-secondary border-secondary border h-full rounded-3xl w-full overflow-hidden">
+      <section className="flex flex-col h-screen justify-between lg:(min-h-screen flex-row flex-row-reverse) lg:p-2 ">
+        <main className="flex-grow max-w-screen md:(p-4) lg:(min-h-full w-9/12) xl:w-10/12 ">
+          <div className="bg-secondary h-full w-full overflow-hidden md:(rounded-4xl)">
             <TopNavigationBar />
             <section>{children}</section>
           </div>

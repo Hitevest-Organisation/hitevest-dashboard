@@ -55,7 +55,9 @@ export function MobileNavigation({ page }: Props) {
         <Link key={link.alias} href={`/${link.slug}`}>
           <a
             className={`rounded-xl font-bold p-2 text-xs capitalize hover:(text-primary bg-secondary) ${
-              page == link.alias ? "bg-primary text-white" : "text-gray-400 "
+              page == link.alias
+                ? "bg-primary text-white"
+                : "text-true-gray-400 "
             }`}
           >
             {link.title}
@@ -72,16 +74,19 @@ export function DesktopNavigation({ page }: Props) {
       <div>
         <img src="/images/logo.svg" alt="logo" />
       </div>
-      <div className="pb-8">
-        <div className="font-bold text-lg py-6 text-gray-400">Menu</div>
+
+      <section className="pb-8">
+        <div className="font-bold text-sm pt-6 pb-4 text-true-gray-400">
+          Menu
+        </div>
         <div className="flex flex-col space-y-4">
           {navLinks.map((link, i) => (
             <Link key={link.alias} href={`/${link.slug}`}>
               <a
-                className={`rounded-xl font-bold py-2 px-8 capitalize hover:(text-primary bg-secondary) ${
+                className={`rounded-2xl text-sm font-medium py-2 px-8 capitalize hover:(text-primary bg-secondary) ${
                   page == link.alias
                     ? "bg-primary text-white"
-                    : "text-gray-400 "
+                    : "text-true-gray-400 "
                 }`}
               >
                 {link.title}
@@ -89,30 +94,30 @@ export function DesktopNavigation({ page }: Props) {
             </Link>
           ))}
         </div>
-      </div>
+      </section>
 
-      <div className="rounded-lg flex flex-col space-y-4 shadow-lg p-4">
+      <section className="rounded-lg flex flex-col space-y-4 shadow-lg text-sm p-4">
         <div className="text-center ">
-          <div className="rounded-full mx-auto bg-gray-300 h-20 w-20" />
+          <div className="rounded-full mx-auto bg-true-gray-300 h-20 w-20" />
           <div className="font-bold text-sm py-4 text-dark-50">
             Sandy Oluwatobi
           </div>
         </div>
 
-        <button className="bg-primary rounded-xl font-bold bg-opacity-20 text-primary text-center p-2 capitalize hover:(bg-opacity-100 bg-secondary text-white) ">
+        <button className="bg-primary font-bold bg-opacity-20 rounded-2xl text-primary text-center p-3 capitalize hover:(bg-opacity-100 bg-secondary text-white) ">
           View Profile
         </button>
 
-        <button className="rounded-xl font-bold text-primary-light text-center p-1 capitalize hover:(underline) ">
+        <button className="rounded-xl font-bold text-primary-light text-center w-full py-2  px-8 capitalize hover:(text-primary bg-secondary) ">
           Copy Referal link
         </button>
 
         <Link href="/">
-          <a className="rounded-xl font-bold text-center w-full py-2 px-8 text-gray-400 capitalize hover:(text-primary bg-secondary) ">
+          <a className="rounded-xl font-bold text-center w-full py-2 px-8 text-true-gray-400 capitalize hover:(text-primary bg-secondary) ">
             Logout
           </a>
         </Link>
-      </div>
+      </section>
     </section>
   );
 }

@@ -1,12 +1,12 @@
 export default function TopNavigationBar() {
   return (
-    <section className="flex max-w-screen p-2 gap-x-4 items-center justify-between md:(p-4 px-8) ">
-      <div className="rounded-full mx-auto bg-gray-300 h-10 w-10 lg:(hidden)" />
+    <section className="flex max-w-screen w-full p-2 gap-x-4 items-center justify-between md:(p-4 px-8) ">
+      <div className="rounded-full mx-auto bg-true-gray-300 h-10 w-10 lg:(hidden)" />
       <SearhBar />
       <div className="bg-white rounded-full cursor-pointer mx-auto p-2 hover:(shadow-lg)">
         <img src="/icons/notification.svg" className="h-6 w-6" alt="bell" />
       </div>
-      <div className="bg-white rounded-full cursor-pointer mx-auto p-2 hover:(shadow-lg)">
+      <div className="bg-white rounded-full cursor-pointer mx-auto p-2 hidden md:(block) hover:(shadow-lg)">
         <img src="/icons/setting.svg" className="h-6 w-6" alt="settings" />
       </div>
     </section>
