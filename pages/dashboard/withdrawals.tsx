@@ -3,11 +3,15 @@ import Pagetitle from "../../components/_partials/Pagetitle";
 import DashboardLayout from "../../layouts/DashboardLayout";
 
 export default function WithdrawalsPage() {
+  const withdrawalTypes = ["Bitcoin", "Bank Account"];
   return (
     <DashboardLayout alias="withdrawals">
       <section className="px-4 md:(px-8 flex justify-evenly space-x-8) ">
-        {["Bitcoin", "Bank Account"].map((withdrawalType, i) => (
-          <section className="bg-white rounded-3xl text-center text-sm mb-4 w-full p-4 text-true-gray-700 md:(p-8 w-1/2) ">
+        {withdrawalTypes.map((withdrawalType, i) => (
+          <section
+            key={i}
+            className="bg-white rounded-3xl text-center text-sm mb-4 w-full p-4 text-true-gray-700 md:(p-8 w-1/2) "
+          >
             <div className="rounded-full mx-auto bg-true-gray-300 h-20 w-20" />
 
             <div className="font-bold pt-4 pb-2">
@@ -16,7 +20,7 @@ export default function WithdrawalsPage() {
             <div className="pb-2">Limit: 1 to 1000000 USD</div>
             <div className="pb-6">Charge: 0 USD + 0%</div>
             <div className="flex justify-center">
-              <button className="bg-primary rounded-xl font-bold text-white py-2 px-8 hidden capitalize md:block">
+              <button className="bg-primary rounded-xl font-bold text-white p-4 px-8 hidden capitalize md:block">
                 Withdraw
               </button>
             </div>
