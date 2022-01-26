@@ -7,6 +7,9 @@ export default function TransactionsPage() {
       <section className="p-4 md:p-8">
         <section className="bg-white rounded-3xl p-4 md:(p-8)">
           <div className="flex space-x-4">
+            <h1 className="font-bold text-primary text-xl md:(text-2xl pr-4) ">
+              Transactions
+            </h1>
             <button className="bg-primary rounded-xl font-bold bg-opacity-20 text-primary text-sm text-center p-2 px-4 capitalize md:px-8 hover:(bg-opacity-100 bg-secondary text-white) ">
               Deposit
             </button>

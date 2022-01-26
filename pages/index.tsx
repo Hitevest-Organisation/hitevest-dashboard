@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function DashboardLogin() {
   return (
-    <div className="bg-black h-screen bg-opacity-40 w-full md:(flex justify-center h-screen items-center p-8) ">
+    <div className="bg-secondary h-screen bg-opachyuuiyity-40 w-full md:(flex justify-center h-screen items-center p-8) ">
       <div className="container bg-white flex h-full mx-auto max-w-screen-xl shadow-xl md:(rounded-3xl h-auto overflow-hidden) ">
         <div
           className="bg-cover bg-no-repeat min-h-full w-1/3 hidden md:(block)"
