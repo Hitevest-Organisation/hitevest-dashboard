@@ -41,12 +41,6 @@ export default function TransactionsTable({ limit }: Props) {
           </div>
         ))}
       </div>
-
-      <nav className="flex pt-4 justify-end">
-        <button className="bg-primary rounded-xl font-bold bg-opacity-20 text-primary text-sm text-center p-2 px-4 capitalize md:px-8 hover:(bg-opacity-100 bg-secondary text-white) ">
-          Veiw All →
-        </button>
-      </nav>
     </section>
   );
 }
