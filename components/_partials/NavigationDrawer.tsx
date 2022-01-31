@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Router from "next/router";
 
 const navLinks = [
   {
@@ -68,6 +69,11 @@ export function MobileNavigation({ page }: Props) {
 }
 
 export function DesktopNavigation({ page }: Props) {
+  const logout = () => {
+    localStorage.removeItem("userData");
+    Router.replace("/");
+  };
+
   return (
     <section className="min-h-full p-4 w-64 hidden lg:block">
       <div>
@@ -80,7 +86,7 @@ export function DesktopNavigation({ page }: Props) {
         </div>
         <div className="flex flex-col space-y-4">
           {navLinks.map((link, i) => (
-            <Link key={link.alias} href={`/${link.slug}`}>
+            <Link key={link.alias} href={`${link.slug}`}>
               <a
                 className={`flex space-x-2 items-center  rounded-2xl text-sm font-medium py-2 px-8 capitalize hover:(text-primary bg-secondary) ${
                   page == link.alias
@@ -112,12 +118,13 @@ export function DesktopNavigation({ page }: Props) {
           Copy Referal link
         </button>
 
-        <Link href="/">
-          <a className="rounded-xl flex font-bold space-x-2 text-center w-full py-2 px-8 text-true-gray-400 justify-center items-center capitalize hover:(text-primary bg-secondary) ">
-            <img alt="" src="/icons/logout.svg" className="h-4 w-4" />
-            <div>Logout</div>
-          </a>
-        </Link>
+        <button
+          onClick={logout}
+          className="rounded-xl flex font-bold space-x-2 text-center w-full py-2 px-8 text-true-gray-400 justify-center items-center capitalize hover:(text-primary bg-secondary) "
+        >
+          <img alt="" src="/icons/logout.svg" className="h-4 w-4" />
+          <div>Logout</div>
+        </button>
       </section>
     </section>
   );

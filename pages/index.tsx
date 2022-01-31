@@ -27,8 +27,6 @@ export default function LoginPage() {
         Router.replace("/dashboard");
       })
       .catch((e) => {
-        console.log(e?.response?.data.message);
-
         setErrorMsg(
           e?.response?.data.message ||
             "Sorry, an error occured. Please try again"
@@ -52,7 +50,7 @@ export default function LoginPage() {
     >
       <form
         className="mx-auto max-w-screen-md p-8"
-        onSubmit={handleSubmit((data) => login(data))}
+        onSubmit={handleSubmit((data: any) => login(data))}
       >
         {!!errorMsg && (
           <div className="border rounded mx-auto max-w-sm border-red-600 border-l-4 text-center text-sm mb-4 py-2 px-4 text-gray-800">
@@ -90,6 +88,7 @@ export default function LoginPage() {
             <input
               className="bg-white bg-secondary border border-primary rounded-lg w-full p-2 focus:outline-none"
               {...register("password", { required: true })}
+              type="password"
             />
           </div>
           {errors.password && (
