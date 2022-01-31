@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Router from "next/router";
+import { useEffect, useState } from "react";
 
 const navLinks = [
   {
@@ -69,6 +70,13 @@ export function MobileNavigation({ page }: Props) {
 }
 
 export function DesktopNavigation({ page }: Props) {
+  const [userData, setUserData] = useState({});
+
+  useEffect(() => {
+    const user = localStorage.getItem("userData");
+    setUserData(JSON.parse(user || ""));
+  }, []);
+
   const logout = () => {
     localStorage.removeItem("userData");
     Router.replace("/");
@@ -106,7 +114,7 @@ export function DesktopNavigation({ page }: Props) {
         <div className="text-center ">
           <div className="rounded-full mx-auto bg-true-gray-300 h-20 w-20" />
           <div className="font-bold text-sm py-4 text-dark-50">
-            Sandy Oluwatobi
+            {userData?.user?.name || "Guest"}
           </div>
         </div>
 
