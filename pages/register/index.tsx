@@ -1,7 +1,15 @@
 import Link from "next/link";
+import { useForm } from "react-hook-form";
 import AuthLayout from "../../layouts/AuthLayout";
 
 export default function RegistrationPage() {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+
   return (
     <AuthLayout
       page="Login"
@@ -14,7 +22,10 @@ export default function RegistrationPage() {
           <div>
             <div className="font-medium pb-1">Full name</div>
             <div>
-              <input className="bg-white bg-secondary border border-primary rounded-lg w-full p-2 focus:outline-none" />
+              <input
+                className="bg-white bg-secondary border border-primary rounded-lg w-full p-2 focus:outline-none"
+                {...register("name", { required: true })}
+              />
             </div>
           </div>
           <div className="text-xs text-red-700 italic">
@@ -25,7 +36,10 @@ export default function RegistrationPage() {
         <div className="w-full pb-4 md:w-1/2">
           <div className="font-medium pb-1">Email Address</div>
           <div>
-            <input className="bg-white bg-secondary border border-primary rounded-lg w-full p-2 focus:outline-none" />
+            <input
+              className="bg-white bg-secondary border border-primary rounded-lg w-full p-2 focus:outline-none"
+              {...register("email", { required: true })}
+            />
           </div>
           <div className="text-xs text-red-700 italic">
             Enter your email address
@@ -40,7 +54,7 @@ export default function RegistrationPage() {
             <div>
               <input
                 className="bg-white bg-secondary border border-primary rounded-lg w-full p-2 focus:outline-none"
-                placeholder="Example@email.com"
+                {...register("phone", { required: true })}
               />
             </div>
           </div>
@@ -54,7 +68,7 @@ export default function RegistrationPage() {
           <div>
             <input
               className="bg-white bg-secondary border border-primary rounded-lg w-full p-2 focus:outline-none"
-              placeholder="Example@email.com"
+              {...register("country", { required: true })}
             />
           </div>
           <div className="text-xs text-red-700 italic">Enter your country</div>
@@ -68,7 +82,7 @@ export default function RegistrationPage() {
             <div>
               <input
                 className="bg-white bg-secondary border border-primary rounded-lg w-full p-2 focus:outline-none"
-                placeholder="Example@email.com"
+                {...register("password", { required: true })}
               />
             </div>
           </div>
@@ -80,7 +94,7 @@ export default function RegistrationPage() {
           <div>
             <input
               className="bg-white bg-secondary border border-primary rounded-lg w-full p-2 focus:outline-none"
-              placeholder="Example@email.com"
+              {...register("confirm_password", { required: true })}
             />
           </div>
           <div className="text-xs text-red-700 italic">
