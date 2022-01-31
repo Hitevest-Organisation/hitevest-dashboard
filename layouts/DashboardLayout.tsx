@@ -15,7 +15,7 @@ export default function DashboardLayout({ children, alias }: Props) {
         <main className="flex-grow max-w-screen overflow-y-auto md:(p-4) lg:(min-h-full w-9/12) xl:w-10/12 ">
           <div className="bg-secondary min-h-full w-full pb-20 md:(rounded-4xl pb-0) ">
             <TopNavigationBar />
-            <section>{children}</section>
+            <section className="">{children}</section>
           </div>
         </main>
 

@@ -9,9 +9,8 @@ export default function LoginPage() {
       title="Login To Your Account"
       backLink="https://hitevest.com"
     >
-      <section className="mx-auto max-w-screen-md p-8 ">
-        {" "}
-        <div className="py-4">
+      <section className="mx-auto max-w-screen-md p-8">
+        <div className="pb-4">
           <div>
             <div className="font-medium pb-1">Email address</div>
             <div>
@@ -23,7 +22,7 @@ export default function LoginPage() {
           </div>
           <div className="text-xs text-red-700 italic">Enter your email</div>
         </div>
-        <div className="py-4">
+        <div className="pb-4">
           <div className="font-medium pb-1"> Password</div>
           <div>
             <input
@@ -36,14 +35,14 @@ export default function LoginPage() {
         <div className="pb-2">
           <div className="">
             Forget password?{" "}
-            <Link href="#/reset-password">
+            <Link href="/reset-password">
               <a className="font-bold text-bold text-primary hover:(underline)">
                 Reset now
               </a>
             </Link>
           </div>
         </div>
-        <div className="text-center pt-8 pb-4">
+        <div className="text-center pt-6">
           <Link href="/dashboard">
             <a className="bg-primary rounded-lg mx-auto max-w-sm text-white p-2 block">
               Login
@@ -53,7 +52,7 @@ export default function LoginPage() {
         <div className="py-4">
           <div className="text-center">
             Don’t have an account?{" "}
-            <Link href="#/register">
+            <Link href="/register">
               <a className="font-bold text-bold text-primary hover:(underline)">
                 Register
               </a>

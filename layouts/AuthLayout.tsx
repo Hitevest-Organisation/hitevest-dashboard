@@ -2,17 +2,22 @@ import Link from "next/link";
 
 export default function AuthLayout({
   page,
+  small,
   title,
   backLink,
   children,
   showBackgroud,
 }: Props) {
   return (
-    <div className="bg-secondary h-screen bg-opachyuuiyity-40 w-full md:(flex justify-center h-screen items-center p-8) ">
-      <div className="container bg-white flex h-full mx-auto max-w-screen-xl shadow-xl md:(rounded-3xl h-auto overflow-hidden) ">
+    <div className="bg-secondary h-screen w-full md:(flex justify-center h-screen items-center p-8) ">
+      <div
+        className={`container bg-white flex h-full mx-auto max-w-screen-md shadow-xl md:(rounded-3xl h-auto overflow-hidden) ${
+          small ? "max-w-screen-md" : "max-w-screen-lg"
+        }`}
+      >
         {showBackgroud && (
           <div
-            className="bg-cover bg-no-repeat min-h-full w-1/3 hidden md:(block)"
+            className="bg-contain bg-no-repeat min-h-full w-1/3 hidden md:(block)"
             style={{
               backgroundImage: "url(/images/auth-bg.png)",
             }}
@@ -23,14 +28,14 @@ export default function AuthLayout({
           <div className="flex justify-end">
             <div className="flex justify-end">
               <Link href={backLink}>
-                <a className="rounded-full flex font-bold h-12 text-2xl w-12 justify-center items-center hover:(bg-secondary text-primary) ">
+                <a className="rounded-full flex font-bold h-10 text-xl w-10 justify-center items-center hover:(bg-secondary text-primary) ">
                   ✕
                 </a>
               </Link>
             </div>
           </div>
 
-          <div className="font-bold text-center text-xl capitalize md:(text-2xl) lg:(text-3xl)">
+          <div className="font-bold text-center text-xl capitalize md:(text-2xl)">
             {title}
           </div>
 
@@ -43,6 +48,7 @@ export default function AuthLayout({
 
 interface Props {
   page: string;
+  small?: true;
   title: string;
   children: any;
   backLink: string;
