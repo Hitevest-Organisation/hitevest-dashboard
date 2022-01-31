@@ -74,7 +74,8 @@ export function DesktopNavigation({ page }: Props) {
 
   useEffect(() => {
     const user = localStorage.getItem("userData");
-    setUserData(JSON.parse(user || ""));
+    if (!user) Router.replace("/");
+    else setUserData(JSON.parse(user || ""));
   }, []);
 
   const logout = () => {
