@@ -5,7 +5,7 @@ import AuthLayout from "../../layouts/AuthLayout";
 
 export default function RegistrationPage() {
   const [otp, setOTP] = useState("");
-  const changeOTP = (OTP) => {
+  const changeOTP = (OTP: string) => {
     setOTP(OTP);
   };
 
@@ -36,7 +36,7 @@ export default function RegistrationPage() {
       </div>
 
       <div className="text-center pt-8 pb-4">
-        <Link href="/register/otp">
+        <Link href="/dashboard">
           <a className="bg-primary rounded-lg mx-auto max-w-sm text-white p-2 block">
             Validate
           </a>
