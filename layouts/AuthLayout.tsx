@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Router from "next/router";
+import { useEffect } from "react";
 
 export default function AuthLayout({
   page,
@@ -8,6 +10,12 @@ export default function AuthLayout({
   children,
   showBackgroud,
 }: Props) {
+  useEffect(() => {
+    // Auto redirect to dashboard if user is logged in
+    const UserData = localStorage.getItem("userData");
+    if (!!UserData) Router.replace("/dashboard");
+  }, []);
+
   return (
     <div className="bg-secondary h-screen w-full md:(flex justify-center h-screen items-center p-8) ">
       <div

@@ -1,9 +1,9 @@
 import Link from "next/link";
+import Router from "next/router";
+import { useState } from "react";
 import axios from "../lib/AxiosInstance";
-import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import AuthLayout from "../layouts/AuthLayout";
-import Router from "next/router";
 
 export default function LoginPage() {
   const {
@@ -34,12 +34,6 @@ export default function LoginPage() {
       })
       .finally(() => setFetching(false));
   };
-
-  useEffect(() => {
-    // Auto redirect to dashboard if user is logged in
-    const UserData = localStorage.getItem("userData");
-    if (!!UserData) Router.replace("/dashboard");
-  }, []);
 
   return (
     <AuthLayout
